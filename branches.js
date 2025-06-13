@@ -98,8 +98,8 @@ class Circles {
     //INDIVIDUAL ADDITION:
     // Animate diameter using Perlin noise for smooth pulsing effect
     let noiseVal = noise(this.noiseOffset + frameCount * 0.01);
-    let animatedDiameter = this.ballDiameter * map(noiseVal, 0, 1, 0.7, 1.3);
-  
+    let animatedDiameter = this.ballDiameter * map(noiseVal, 0, 1, 0.65, 1.35);
+      
     // INDIVIDUAL ADDITION:
     // Animate color shift using Perlin noise for natural hue variation
     let shift = map(noise(this.noiseOffset + frameCount * 0.01), 0, 1, -80, 80);
