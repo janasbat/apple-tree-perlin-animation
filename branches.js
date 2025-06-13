@@ -12,6 +12,12 @@ class Circles {
 
     this.StrokeColor = color(0)
     this.StrokeWeight = 0
+
+    //INDIVIDUAL ADDITION:
+    // Generate a unique offset for Perlin noise animation using randomness
+    // This ensures each circle has its own animation timing
+    this.noiseOffset = random(1000);
+
   }
   
 
@@ -83,23 +89,38 @@ class Circles {
   }
 
 
-  display(){  
-
-    push()
-
-    translate(this.ballXPos, this.ballYPos)
-
-    stroke(this.StrokeColor)
-    strokeWeight(this.StrokeWeight)
-
-    fill(this.colorTop)
-    arc(0,0, this.ballDiameter, this.ballDiameter, PI/2, (3*PI)/2, PIE)
-
-    fill(this.colorBottom)
-    arc(0,0, this.ballDiameter, this.ballDiameter, (3*PI)/2, PI/2)
-
-
-    pop()
-    
+  display() {
+    push();
+    translate(this.ballXPos, this.ballYPos);
+    stroke(this.StrokeColor);
+    strokeWeight(this.StrokeWeight);
+  
+    //INDIVIDUAL ADDITION:
+    // Animate diameter using Perlin noise for smooth pulsing effect
+    let noiseVal = noise(this.noiseOffset + frameCount * 0.01);
+    let animatedDiameter = this.ballDiameter * map(noiseVal, 0, 1, 0.7, 1.3);
+  
+    // INDIVIDUAL ADDITION:
+    // Animate color shift using Perlin noise for natural hue variation
+    let shift = map(noise(this.noiseOffset + frameCount * 0.01), 0, 1, -80, 80);
+    let topColor = color(
+      red(this.colorTop) + shift,
+      green(this.colorTop),
+      blue(this.colorTop)
+    );
+    let bottomColor = color(
+      red(this.colorBottom),
+      green(this.colorBottom) + shift,
+      blue(this.colorBottom)
+    );
+  
+    // Use animated diameter and color to draw arcs
+    fill(topColor);
+    arc(0, 0, animatedDiameter, animatedDiameter, PI / 2, (3 * PI) / 2, PIE);
+  
+    fill(bottomColor);
+    arc(0, 0, animatedDiameter, animatedDiameter, (3 * PI) / 2, PI / 2);
+  
+    pop();
   }
 }
