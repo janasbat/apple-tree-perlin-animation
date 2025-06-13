@@ -92,8 +92,9 @@ class Circles {
   display() {
     push();
     translate(this.ballXPos, this.ballYPos);
+    let strokeW = map(noise(this.noiseOffset + frameCount * 0.01), 0, 1, 0.5, 2);
     stroke(this.StrokeColor);
-    strokeWeight(this.StrokeWeight);
+    strokeWeight(strokeW); // Animated stroke
   
     //INDIVIDUAL ADDITION:
     // Animate diameter using Perlin noise for smooth pulsing effect
