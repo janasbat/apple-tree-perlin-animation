@@ -42,7 +42,6 @@ These effects simulate a breathing, living tree that reacts to invisible natural
 I was inspired by:
 - Nature-based animations like wind-blown trees
 - Generative art using noise:  
-  - https://p5js.org/examples/math-noise-wave.html  
   - https://openprocessing.org/sketch/792689
 
 These references showed how Perlin noise can make graphics feel “alive”.
