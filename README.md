@@ -1,7 +1,6 @@
 # Apple Tree Animation – Perlin Noise Edition
 
 This is my individual contribution to the group project for animating the apple tree image. My version uses Perlin noise to create smooth, organic animations for the visual elements of the tree.
-
 ---
 
 ## Interaction Instructions
@@ -18,11 +17,11 @@ This is my individual contribution to the group project for animating the apple 
 I chose Perlin noise to animate various properties of the apple tree circles (branches and trunk).
 
 ### Properties I Animated:
-1. Size (diameter) of each circle pulses gently over time.
-2. Color shift on the top and bottom of each circle (especially visible on branches).
-3. Stroke weight is also animated to subtly throb with the animation.
+1. The size of each circle changes using a pulse animation
+2. There is a color shift on the top and bottom of each circle (especially visible on branches).
+3. Stroke weight is added and animated to slightly beat with the animation.
 
-These effects simulate a breathing, living tree that reacts to invisible natural forces.
+These effects symbolise a breathing, living tree that reacts to natural forces.
 
 ---
 
